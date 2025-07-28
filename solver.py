@@ -8,7 +8,7 @@ Nx = 400 # How many cells in x axis
 Ny = 100 # How many cells in y axis
 
 tau = 0.53 # Time scale
-Nt = 3000 # TIme steps
+Nt = 6000 # TIme steps
 
 # lattice speeds and weights
 NL = 9 # 9 differentt velocities
@@ -60,5 +60,5 @@ for it in range(Nt):
     if it % plot_every == 0:
         plt.imshow(np.sqrt(momentumx ** 2 + momentumy ** 2))
         plt.title(it)
-        plt.pause(0.001)
+        plt.pause(0.00001)
         plt.cla()

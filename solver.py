@@ -26,9 +26,12 @@ cylinder_radius = 13
 # Defining Obsticle
 for x in range(Nx):
     for y in range(Ny):
-        if distance(Nx//4, Ny//2, x, y) <= cylinder_radius:
+        if (distance(Nx//4, Ny//2, x, y) <= cylinder_radius):
             cylinder[y][x] = True 
-
+cylinder[95:] = True     # Bottom Wall
+cylinder[:5] = True      # Top Wall
+# cylinder[:, :5] = True   # Left Wall
+# cylinder[:, 395:] = True # Right Wall
 plot_every = 1
 
 for it in range(Nt):
@@ -57,5 +60,5 @@ for it in range(Nt):
     if it % plot_every == 0:
         plt.imshow(np.sqrt(momentumx ** 2 + momentumy ** 2))
         plt.title(it)
-        # plt.pause(0.1)
+        plt.pause(0.001)
         plt.cla()
